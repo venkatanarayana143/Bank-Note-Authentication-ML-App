@@ -67,9 +67,9 @@ def main():
     if st.button("Predict"):
         result=predict_note_authentication(variance,skewness,curtosis,entropy)
     st.success('The output is {}'.format(result))
-    if st.button("About"):
-        st.text("Lets LEarn")
-        st.text("Built with Streamlit")
+    if st.button("Author"):
+        st.text("Made by Venkat")
+        st.text("Check out the source code here --> [Link](https://github.com/venkatanarayana143/Bank-Note-Authentication-App)
 
 if __name__=='__main__':
     main()
