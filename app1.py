@@ -69,8 +69,7 @@ def main():
     st.success('The output is {}'.format(result))
     if st.button("Author"):
         st.text("Made by Venkat")
-        st.text("Check out the source code here --> [Link](https://github.com/venkatanarayana143/Bank-Note-Authentication-ML-App)
-
+        
 if __name__=='__main__':
     main()
     
