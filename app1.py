@@ -41,7 +41,7 @@ def predict_note_authentication(variance,skewness,curtosis,entropy):
         required: true
     responses:
         200:
-            description: The output values
+            description: The output value is
         
     """
    
@@ -55,21 +55,21 @@ def main():
     st.title("Bank Authenticator")
     html_temp = """
     <div style="background-color:tomato;padding:10px">
-    <h2 style="color:white;text-align:center;">Streamlit Bank Authenticator ML App </h2>
+    <h2 style="color:white;text-align:center;">Streamlit Bank Note Authenticator ML App </h2>
     </div>
     """
     st.markdown(html_temp,unsafe_allow_html=True)
-    variance = st.text_input("Variance","Type Here")
-    skewness = st.text_input("skewness","Type Here")
-    curtosis = st.text_input("curtosis","Type Here")
-    entropy = st.text_input("entropy","Type Here")
+    Variance = st.text_input("Variance","Type Here")
+    Skewness = st.text_input("skewness","Type Here")
+    Curtosis = st.text_input("curtosis","Type Here")
+    Entropy = st.text_input("entropy","Type Here")
     result=""
     if st.button("Predict"):
         result=predict_note_authentication(variance,skewness,curtosis,entropy)
     st.success('The output is {}'.format(result))
     if st.button("Author"):
         st.text("Made by Venkat")
-        st.text("Check out the source code here --> [Link](https://github.com/venkatanarayana143/Bank-Note-Authentication-App)
+        st.text("Check out the source code here --> [Link](https://github.com/venkatanarayana143/Bank-Note-Authentication-ML-App)
 
 if __name__=='__main__':
     main()
