@@ -41,7 +41,7 @@ def predict_note_authentication(variance,skewness,curtosis,entropy):
         required: true
     responses:
         200:
-            description: The output value is
+            description: The output values
         
     """
    
@@ -52,24 +52,37 @@ def predict_note_authentication(variance,skewness,curtosis,entropy):
 
 
 def main():
-    st.title("Bank Authenticator")
+    st.title("Bank Note Authenticator ")
     html_temp = """
     <div style="background-color:tomato;padding:10px">
-    <h2 style="color:white;text-align:center;">Streamlit Bank Note Authenticator ML App </h2>
+    <h2 style="color:white;text-align:center;">Streamlit Bank Authenticator ML App </h2>
     </div>
+    <style>
+    div.stButton > button:first-child {background-color:tomato; color:#ffffff}
+    div.stButton > button:hover {background-color:#00FA9A}
+    </style>
     """
     st.markdown(html_temp,unsafe_allow_html=True)
-    Variance = st.text_input("Variance","Type Here")
-    Skewness = st.text_input("skewness","Type Here")
-    Curtosis = st.text_input("curtosis","Type Here")
-    Entropy = st.text_input("entropy","Type Here")
+    variance = st.text_input("Variance","Enter value")
+    skewness = st.text_input("Skewness","Enter value")
+    curtosis = st.text_input("Curtosis","Enter value")
+    entropy = st.text_input("Entropy","Enter value")
     result=""
+    res = ""
     if st.button("Predict"):
-        result=predict_note_authentication(variance,skewness,curtosis,entropy)
-    st.success('The output is {}'.format(result))
-    if st.button("Author"):
-        st.text("Made by Venkat")
-        
+        result = predict_note_authentication(variance,skewness,curtosis,entropy)
+        if (result == 0):
+          res = "Authentic"
+        elif(result == 1):
+          res = "Not Authentic"
+        else:
+          st.warning("Please enter proper input ")
+          st.info("Please check input format before entering ")
+    
+        st.success("The predicted output is  {} . It means the Bank Note is {} ".format(result,res))
+    with st.expander("Created by"):
+      st.text("Author: Venkata Narayana Bommanaboina")
+      st.write("Source code is availabe [link](https://github.com/venkatanarayana143/Bank-Note-Authentication-ML-App)")
 if __name__=='__main__':
     main()
     
