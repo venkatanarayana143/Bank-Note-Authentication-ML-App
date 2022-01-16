@@ -83,7 +83,7 @@ def main():
     with st.expander("Created by"):
       url ='https://drive.google.com/file/d/13hl3HCo6kWQwt003gzJn9biNSniaR2Ap/view?usp=sharing'
       image = Image.open('author.jpeg')
-      st.image(image, caption='Author: Venkata Narayana Bommanaboina',width=None, use_column_width='auto')
+      st.image(image, caption='Author: Venkata Narayana Bommanaboina',width=200, use_column_width='always')
       st.write("Connect me-->[link](https://www.linkedin.com/in/bvnarayana515739)")
       st.write("Source code is availabe [link](https://github.com/venkatanarayana143/Bank-Note-Authentication-ML-App)")
     
