@@ -2,8 +2,8 @@ import numpy as np
 import pickle
 import pandas as pd
 #from flasgger import Swagger
-import streamlit as st 
-
+import streamlit as st
+import requests
 from PIL import Image
 
 #app=Flask(__name__)
@@ -81,7 +81,10 @@ def main():
     
         st.success("The predicted output is  {} . It means the Bank Note is {} ".format(result,res))
     with st.expander("Created by"):
-      st.text("Author: Venkata Narayana Bommanaboina")
+      url ='https://drive.google.com/file/d/13hl3HCo6kWQwt003gzJn9biNSniaR2Ap/view?usp=drivesdk'
+      image = Image.open(requests.get(url, stream=True).raw)
+      st.image(image, caption='Author: Venkata Narayana Bommanaboina')
+      st.write("Connect me-->[link](https://www.linkedin.com/in/bvnarayana515739)")
       st.write("Source code is availabe [link](https://github.com/venkatanarayana143/Bank-Note-Authentication-ML-App)")
 if __name__=='__main__':
     main()
