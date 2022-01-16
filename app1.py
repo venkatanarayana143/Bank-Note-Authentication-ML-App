@@ -81,7 +81,7 @@ def main():
     
         st.success("The predicted output is  {} . It means the Bank Note is {} ".format(result,res))
     with st.expander("Created by"):
-      url ='https://drive.google.com/file/d/13hl3HCo6kWQwt003gzJn9biNSniaR2Ap/view?usp=drivesdk'
+      url ='https://drive.google.com/file/d/13hl3HCo6kWQwt003gzJn9biNSniaR2Ap/view?usp=sharing'
       image = Image.open(requests.get(url, stream=True).raw)
       st.image(image, caption='Author: Venkata Narayana Bommanaboina')
       st.write("Connect me-->[link](https://www.linkedin.com/in/bvnarayana515739)")
